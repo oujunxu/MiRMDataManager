@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiRMDataManager", "MiRMDataManager\MiRMDataManager.csproj", "{D5142502-0113-44C2-9C21-4CDD136A97FB}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MiRMDB", "MiRMDB\MiRMDB.sqlproj", "{80FFA6F5-1CF4-4003-90A4-A0A2053B6DC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiRMWPFDesktopUserInterface", "MiRMWPFDesktopUserInterface\MiRMWPFDesktopUserInterface.csproj", "{BA0E79E7-A8E6-49CD-9D5A-C9213CE7C516}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{D5142502-0113-44C2-9C21-4CDD136A97FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5142502-0113-44C2-9C21-4CDD136A97FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5142502-0113-44C2-9C21-4CDD136A97FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80FFA6F5-1CF4-4003-90A4-A0A2053B6DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80FFA6F5-1CF4-4003-90A4-A0A2053B6DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80FFA6F5-1CF4-4003-90A4-A0A2053B6DC3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{80FFA6F5-1CF4-4003-90A4-A0A2053B6DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80FFA6F5-1CF4-4003-90A4-A0A2053B6DC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80FFA6F5-1CF4-4003-90A4-A0A2053B6DC3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BA0E79E7-A8E6-49CD-9D5A-C9213CE7C516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0E79E7-A8E6-49CD-9D5A-C9213CE7C516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0E79E7-A8E6-49CD-9D5A-C9213CE7C516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0E79E7-A8E6-49CD-9D5A-C9213CE7C516}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
