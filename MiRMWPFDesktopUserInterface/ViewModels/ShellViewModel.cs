@@ -8,5 +8,6 @@ namespace MiRMWPFDesktopUserInterface.ViewModels
 {
     public class ShellViewModel
     {
+
     }
 }
