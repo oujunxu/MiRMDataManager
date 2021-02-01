@@ -12,8 +12,6 @@ namespace MiRMWPFDesktopUserInterface
 {
     public static class PasswordBoxHelper
     {
-        
-
         public static readonly DependencyProperty BoundPasswordProperty =
             DependencyProperty.RegisterAttached("BoundPassword",
                 typeof(string),

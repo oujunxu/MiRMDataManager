@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using MiRMWPFDesktopUserInterface.Helper;
 using MiRMWPFDesktopUserInterface.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,10 @@ namespace MiRMWPFDesktopUserInterface
             _container.Instance(_container);
             _container
                 .Singleton<IWindowManager, WindowManager>() // singleton: opens up a single instance to prevent multiple instances at once.
-                .Singleton<IEventAggregator, EventAggregator>();
+                .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<IAPIHelper, APIHelper>();
+                
+            
 
             GetType().Assembly.GetTypes()
                               .Where(type => type.IsClass)
