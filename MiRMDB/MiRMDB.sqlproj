@@ -57,7 +57,7 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo" />
-    <Folder Include="dbo\stored Procedures" />
+    <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Views" />
     <Folder Include="dbo\Tables" />
     <Folder Include="PublishedLocations" />
