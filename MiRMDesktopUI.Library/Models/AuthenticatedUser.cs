@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiRMWPFDesktopUserInterface.Models
+namespace MiRMDesktopUI.Library.Models
 {
     public class AuthenticatedUser
     {

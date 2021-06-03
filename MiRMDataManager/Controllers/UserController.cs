@@ -12,12 +12,13 @@ namespace MiRMDataManager.Controllers
     [Authorize]
     public class UserController: ApiController
     {
-        public List<UserModel> GetById()
+        [HttpGet] // a get call
+        public UserModel GetById()
         {
             string userId = RequestContext.Principal.Identity.GetUserId(); // look up the user based on who they are.
             UserData data = new UserData();
 
-            return data.GetUserById(userId);
+            return data.GetUserById(userId).First();
         }
 
     }

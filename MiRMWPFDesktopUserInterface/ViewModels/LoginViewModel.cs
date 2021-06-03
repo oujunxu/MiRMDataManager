@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
-using MiRMWPFDesktopUserInterface.Helper;
+using MiRMDesktopUI.Library.Api;
 
 namespace MiRMWPFDesktopUserInterface.ViewModels
 {
@@ -84,6 +84,9 @@ namespace MiRMWPFDesktopUserInterface.ViewModels
             {
                 ErrorMessage = "";
                 var result = await _apiHelper.Authenticate(UserName, Password);
+
+                //capture more information about the user.
+                await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
             }
             catch (Exception ex)
             {

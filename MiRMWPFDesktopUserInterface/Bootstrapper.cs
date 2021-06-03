@@ -1,5 +1,5 @@
 ﻿using Caliburn.Micro;
-using MiRMWPFDesktopUserInterface.Helper;
+using MiRMDesktopUI.Library.Api;
 using MiRMWPFDesktopUserInterface.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using MiRMDesktopUI.Library.Models;
+
 using System.Windows.Controls;
 
 namespace MiRMWPFDesktopUserInterface
@@ -30,6 +32,7 @@ namespace MiRMWPFDesktopUserInterface
             _container
                 .Singleton<IWindowManager, WindowManager>() // singleton: opens up a single instance to prevent multiple instances at once.
                 .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<ILoggedInUserModel,LoggedInUserModel>()
                 .Singleton<IAPIHelper, APIHelper>();
                 
             
