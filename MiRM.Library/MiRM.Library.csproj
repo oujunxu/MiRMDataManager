@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\Models\ProductModel.cs" />
     <Compile Include="DataAccess\Models\UserModel.cs" />
+    <Compile Include="DataAccess\ProductData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataAccess\Internal\DataAccess\SQLDataAccess.cs" />
     <Compile Include="DataAccess\UserData.cs" />

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 using MiRMDesktopUI.Library.Api;
+using MiRMWPFDesktopUserInterface.EventModels;
 
 namespace MiRMWPFDesktopUserInterface.ViewModels
 {
@@ -14,10 +15,11 @@ namespace MiRMWPFDesktopUserInterface.ViewModels
         private string _password;
         private string _errorMessage;
         private IAPIHelper _apiHelper;
-
-        public LoginViewModel(IAPIHelper apiHelper)
+        private IEventAggregator _events;
+        public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events)
         {
             _apiHelper = apiHelper;
+            _events = events;
         }
 
         public string UserName
@@ -87,6 +89,8 @@ namespace MiRMWPFDesktopUserInterface.ViewModels
 
                 //capture more information about the user.
                 await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
+
+                _events.PublishOnUIThread(new LogOnEvent()); //this tells the user that the user has logged in.
             }
             catch (Exception ex)
             {

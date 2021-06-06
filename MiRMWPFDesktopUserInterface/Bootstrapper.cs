@@ -28,15 +28,16 @@ namespace MiRMWPFDesktopUserInterface
 
         protected override void Configure()
         {
-            _container.Instance(_container);
+            _container.Instance(_container)
+                .PerRequest<IProductEndpoint, ProductEndpoint>();
+
             _container
                 .Singleton<IWindowManager, WindowManager>() // singleton: opens up a single instance to prevent multiple instances at once.
                 .Singleton<IEventAggregator, EventAggregator>()
-                .Singleton<ILoggedInUserModel,LoggedInUserModel>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>()
                 .Singleton<IAPIHelper, APIHelper>();
-                
-            
 
+                
             GetType().Assembly.GetTypes()
                               .Where(type => type.IsClass)
                               .Where(type => type.Name.EndsWith("ViewModel"))

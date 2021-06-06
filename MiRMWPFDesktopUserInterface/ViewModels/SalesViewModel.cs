@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using MiRMDesktopUI.Library.Api;
+using MiRMDesktopUI.Library.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,14 +12,34 @@ namespace MiRMWPFDesktopUserInterface.ViewModels
 {
     public class SalesViewModel : Screen
     {
-        private BindingList<string> _producs;
+        IProductEndpoint _productEndPoint;
+        
+        public SalesViewModel(IProductEndpoint productEndPoint)
+        {
+            _productEndPoint = productEndPoint;
+            
+        }
+
+        protected override async void OnViewLoaded(object view)
+        {
+            base.OnViewLoaded(view);
+            await LoadProducts();
+        }
+
+        private async Task LoadProducts()
+        {
+            var productList = await _productEndPoint.GetAll();
+            Products = new BindingList<ProductModel>(productList);
+        }
+
+        private BindingList<ProductModel> _products;
 
         // issues when bindinglist is overríden.
-        public BindingList<string> Products
+        public BindingList<ProductModel> Products
         {
-            get { return _producs; }
+            get { return _products; }
             set {
-                _producs = value;
+                _products = value;
                 
                 NotifyOfPropertyChange(() => Products);
             }
@@ -35,14 +57,14 @@ namespace MiRMWPFDesktopUserInterface.ViewModels
         }
 
 
-        private String _itemQuantity;
+        private int _itemQuantity;
 
-        public String ItemQuantity
+        public int ItemQuantity
         {
             get { return _itemQuantity; }
             set {
                 _itemQuantity = value;
-                NotifyOfPropertyChange(() => Products);
+                NotifyOfPropertyChange(() => ItemQuantity);
             }
         }
 
@@ -52,7 +74,6 @@ namespace MiRMWPFDesktopUserInterface.ViewModels
             {
                 // Replace with calc
                 return "$0.00";
-            
             }
   
         }
